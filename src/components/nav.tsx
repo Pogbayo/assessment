@@ -1,26 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import { LuPlaneLanding } from "react-icons/lu";
+interface NavbarProps {
+  onSearch: (query: string) => void;
+}
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSearch(searchQuery);
+  };
+
   return (
     <nav className="bg-white shadow-md">
       <div className="container mx-auto px-4 flex justify-between items-center py-3">
-        {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img src="/logo.png" alt="Logo" className="w-8 h-8" />
+          <LuPlaneLanding size={60} />
           <span className="text-xl font-semibold">Travel Platform</span>
         </div>
 
-        {/* Search Bar */}
         <div className="flex-1 mx-8">
-          <input
-            type="text"
-            placeholder="Search for destinations, flights, hotels..."
-            className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <form onSubmit={handleSearchSubmit} className="w-full">
+            <input
+              type="text"
+              placeholder="Search for airline"
+              className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={searchQuery}
+              onChange={handleSearchChange}
+            />
+          </form>
         </div>
 
-        {/* Links */}
-        <div className="flex items-center space-x-6">
+        <div className="hidden md:flex items-center space-x-6">
           <a href="#" className="text-gray-600 hover:text-blue-500">
             Home
           </a>
@@ -30,9 +46,7 @@ const Navbar: React.FC = () => {
           <a href="#" className="text-gray-600 hover:text-blue-500">
             Wallet
           </a>
-          <a href="#" className="text-gray-600 hover:text-blue-500">
-            Plan a Trip
-          </a>
+
           <a href="#" className="text-gray-600 hover:text-blue-500">
             Commission for Me
           </a>
@@ -40,7 +54,6 @@ const Navbar: React.FC = () => {
             Subscribe
           </button>
           <div className="relative">
-            {/* Notification Icon */}
             <button className="relative">
               <span className="material-icons text-gray-600 hover:text-blue-500">
                 notifications
@@ -50,13 +63,11 @@ const Navbar: React.FC = () => {
               </span>
             </button>
           </div>
-          {/* Cart Icon */}
           <button className="relative">
             <span className="material-icons text-gray-600 hover:text-blue-500">
               shopping_cart
             </span>
           </button>
-          {/* Profile Icon */}
           <button>
             <span className="material-icons text-gray-600 hover:text-blue-500">
               account_circle
