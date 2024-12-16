@@ -1,205 +1,4 @@
-// export interface Flight {
-//     flightId: string;
-//     airline: string;
-//     price: number;
-//     currency: string;
-//     from: string;
-//     to: string;
-//     departureTime: string;
-//     arrivalTime: string;
-//     flightDuration: string;
-//     stops: number;
-//     flightClass: string;
-//     seatAvailability: number;
-//     baggageAllowance: string;
-//     aircraftType: string;
-//     flightStatus: string;
-//     gate: string;
-//   }
-  
-//   export const flights: Flight[] = [
-//     {
-//       flightId: "FL123",
-//       airline: "Air India",
-//       price: 500,
-//       currency: "INR",
-//       from: "Mumbai (BOM)",
-//       to: "Delhi (DEL)",
-//       departureTime: "2024-12-20T06:30:00",
-//       arrivalTime: "2024-12-20T08:30:00",
-//       flightDuration: "2h 0m",
-//       stops: 0,
-//       flightClass: "Economy",
-//       seatAvailability: 120,
-//       baggageAllowance: "20 kg",
-//       aircraftType: "Boeing 737",
-//       flightStatus: "On Time",
-//       gate: "A1",
-//     },
-//     {
-//       flightId: "FL124",
-//       airline: "IndiGo",
-//       price: 450,
-//       currency: "INR",
-//       from: "Mumbai (BOM)",
-//       to: "Delhi (DEL)",
-//       departureTime: "2024-12-20T10:00:00",
-//       arrivalTime: "2024-12-20T12:00:00",
-//       flightDuration: "2h 0m",
-//       stops: 0,
-//       flightClass: "Economy",
-//       seatAvailability: 100,
-//       baggageAllowance: "15 kg",
-//       aircraftType: "Airbus A320",
-//       flightStatus: "Delayed",
-//       gate: "B2",
-//     },
-//     {
-//       flightId: "FL125",
-//       airline: "SpiceJet",
-//       price: 400,
-//       currency: "INR",
-//       from: "Mumbai (BOM)",
-//       to: "Delhi (DEL)",
-//       departureTime: "2024-12-20T14:30:00",
-//       arrivalTime: "2024-12-20T16:30:00",
-//       flightDuration: "2h 0m",
-//       stops: 1,
-//       flightClass: "Economy",
-//       seatAvailability: 150,
-//       baggageAllowance: "20 kg",
-//       aircraftType: "Boeing 737",
-//       flightStatus: "On Time",
-//       gate: "C3",
-//     },
-//     {
-//       flightId: "FL126",
-//       airline: "GoAir",
-//       price: 420,
-//       currency: "INR",
-//       from: "Mumbai (BOM)",
-//       to: "Delhi (DEL)",
-//       departureTime: "2024-12-20T18:00:00",
-//       arrivalTime: "2024-12-20T20:00:00",
-//       flightDuration: "2h 0m",
-//       stops: 0,
-//       flightClass: "Economy",
-//       seatAvailability: 110,
-//       baggageAllowance: "15 kg",
-//       aircraftType: "Airbus A320",
-//       flightStatus: "On Time",
-//       gate: "D1",
-//     },
-//     {
-//       flightId: "FL127",
-//       airline: "Vistara",
-//       price: 650,
-//       currency: "INR",
-//       from: "Mumbai (BOM)",
-//       to: "Delhi (DEL)",
-//       departureTime: "2024-12-20T20:00:00",
-//       arrivalTime: "2024-12-20T22:00:00",
-//       flightDuration: "2h 0m",
-//       stops: 0,
-//       flightClass: "Business",
-//       seatAvailability: 50,
-//       baggageAllowance: "30 kg",
-//       aircraftType: "Boeing 787",
-//       flightStatus: "On Time",
-//       gate: "A2",
-//     },
-//     {
-//       flightId: "FL128",
-//       airline: "Air India",
-//       price: 550,
-//       currency: "INR",
-//       from: "Bangalore (BLR)",
-//       to: "Mumbai (BOM)",
-//       departureTime: "2024-12-21T07:00:00",
-//       arrivalTime: "2024-12-21T08:30:00",
-//       flightDuration: "1h 30m",
-//       stops: 0,
-//       flightClass: "Economy",
-//       seatAvailability: 130,
-//       baggageAllowance: "20 kg",
-//       aircraftType: "Airbus A321",
-//       flightStatus: "On Time",
-//       gate: "A4",
-//     },
-//     {
-//       flightId: "FL129",
-//       airline: "IndiGo",
-//       price: 430,
-//       currency: "INR",
-//       from: "Bangalore (BLR)",
-//       to: "Mumbai (BOM)",
-//       departureTime: "2024-12-21T10:30:00",
-//       arrivalTime: "2024-12-21T12:00:00",
-//       flightDuration: "1h 30m",
-//       stops: 0,
-//       flightClass: "Economy",
-//       seatAvailability: 120,
-//       baggageAllowance: "15 kg",
-//       aircraftType: "Airbus A320",
-//       flightStatus: "Delayed",
-//       gate: "B1",
-//     },
-//     {
-//       flightId: "FL130",
-//       airline: "GoAir",
-//       price: 420,
-//       currency: "INR",
-//       from: "Bangalore (BLR)",
-//       to: "Mumbai (BOM)",
-//       departureTime: "2024-12-21T14:00:00",
-//       arrivalTime: "2024-12-21T15:30:00",
-//       flightDuration: "1h 30m",
-//       stops: 1,
-//       flightClass: "Economy",
-//       seatAvailability: 150,
-//       baggageAllowance: "15 kg",
-//       aircraftType: "Boeing 737",
-//       flightStatus: "On Time",
-//       gate: "C4",
-//     },
-//     {
-//       flightId: "FL131",
-//       airline: "SpiceJet",
-//       price: 460,
-//       currency: "INR",
-//       from: "Bangalore (BLR)",
-//       to: "Mumbai (BOM)",
-//       departureTime: "2024-12-21T16:00:00",
-//       arrivalTime: "2024-12-21T17:30:00",
-//       flightDuration: "1h 30m",
-//       stops: 0,
-//       flightClass: "Economy",
-//       seatAvailability: 140,
-//       baggageAllowance: "20 kg",
-//       aircraftType: "Airbus A320",
-//       flightStatus: "On Time",
-//       gate: "B2",
-//     },
-//     {
-//       flightId: "FL132",
-//       airline: "Vistara",
-//       price: 670,
-//       currency: "INR",
-//       from: "Bangalore (BLR)",
-//       to: "Mumbai (BOM)",
-//       departureTime: "2024-12-21T18:30:00",
-//       arrivalTime: "2024-12-21T20:00:00",
-//       flightDuration: "1h 30m",
-//       stops: 0,
-//       flightClass: "Business",
-//       seatAvailability: 50,
-//       baggageAllowance: "30 kg",
-//       aircraftType: "Boeing 787",
-//       flightStatus: "On Time",
-//       gate: "D2",
-//     },
-//     // More flight data can go here...
-//   ];
+
 export interface Flight {
   flightId: string;
   airline: string;
@@ -400,20 +199,19 @@ export const flights: Flight[] = [
     flightStatus: "On Time",
     gate: "C5",
   }
-  // More international flight data can go here...
 ];
-// data.ts
+
 export interface Hotel {
   hotelId: string;
   name: string;
   location: string;
   pricePerNight: number;
-  rating: number; // Rating in stars
-  amenities: string[]; // List of amenities the hotel offers
-  availableRooms: number; // Number of available rooms
-  checkInTime: string; // Check-in time (e.g., "2:00 PM")
-  checkOutTime: string; // Check-out time (e.g., "11:00 AM")
-  imageUrl: string; // Image URL for the hotel
+  rating: number; 
+  amenities: string[]; 
+  availableRooms: number; 
+  checkInTime: string; 
+  checkOutTime: string; 
+  imageUrl: string;
 }
 
 export const hotels: Hotel[] = [
@@ -427,7 +225,7 @@ export const hotels: Hotel[] = [
     availableRooms: 10,
     checkInTime: "2:00 PM",
     checkOutTime: "11:00 AM",
-    imageUrl: "https://example.com/grand-palace.jpg",
+    imageUrl: "/1.jpg",
   },
   {
     hotelId: "2",
@@ -439,7 +237,7 @@ export const hotels: Hotel[] = [
     availableRooms: 5,
     checkInTime: "3:00 PM",
     checkOutTime: "12:00 PM",
-    imageUrl: "https://example.com/ocean-view-resort.jpg",
+    imageUrl: "/2.jpg.crdownload",
   },
   {
     hotelId: "3",
@@ -451,7 +249,7 @@ export const hotels: Hotel[] = [
     availableRooms: 8,
     checkInTime: "4:00 PM",
     checkOutTime: "10:00 AM",
-    imageUrl: "https://example.com/mountain-retreat.jpg",
+    imageUrl: "/3.jpg",
   },
   {
     hotelId: "4",
@@ -463,7 +261,7 @@ export const hotels: Hotel[] = [
     availableRooms: 20,
     checkInTime: "2:00 PM",
     checkOutTime: "11:00 AM",
-    imageUrl: "https://example.com/city-center-inn.jpg",
+    imageUrl: "h/4.jpg",
   },
   {
     hotelId: "5",
@@ -475,7 +273,7 @@ export const hotels: Hotel[] = [
     availableRooms: 4,
     checkInTime: "3:00 PM",
     checkOutTime: "12:00 PM",
-    imageUrl: "https://example.com/sunset-villa.jpg",
+    imageUrl: "/5.jpg",
   },
   {
     hotelId: "6",
@@ -487,7 +285,7 @@ export const hotels: Hotel[] = [
     availableRooms: 6,
     checkInTime: "4:00 PM",
     checkOutTime: "1:00 PM",
-    imageUrl: "https://example.com/desert-oasis-resort.jpg",
+    imageUrl: "/6.jpg",
   },
   {
     hotelId: "7",
@@ -499,7 +297,7 @@ export const hotels: Hotel[] = [
     availableRooms: 12,
     checkInTime: "2:00 PM",
     checkOutTime: "11:00 AM",
-    imageUrl: "https://example.com/cozy-cabin-lodge.jpg",
+    imageUrl: "/7.jpg",
   },
   {
     hotelId: "8",
@@ -511,7 +309,7 @@ export const hotels: Hotel[] = [
     availableRooms: 8,
     checkInTime: "2:00 PM",
     checkOutTime: "12:00 PM",
-    imageUrl: "https://example.com/luxury-heights-hotel.jpg",
+    imageUrl: "/8.jpg",
   },
   {
     hotelId: "9",
@@ -523,7 +321,7 @@ export const hotels: Hotel[] = [
     availableRooms: 15,
     checkInTime: "3:00 PM",
     checkOutTime: "11:00 AM",
-    imageUrl: "https://example.com/tropical-paradise-resort.jpg",
+    imageUrl: "/9.jpg",
   },
   {
     hotelId: "10",
@@ -535,7 +333,7 @@ export const hotels: Hotel[] = [
     availableRooms: 18,
     checkInTime: "3:00 PM",
     checkOutTime: "12:00 PM",
-    imageUrl: "https://example.com/cultural-heritage-inn.jpg",
+    imageUrl: "/10.jpg",
   },
   {
     hotelId: "11",
@@ -547,7 +345,7 @@ export const hotels: Hotel[] = [
     availableRooms: 10,
     checkInTime: "3:00 PM",
     checkOutTime: "11:00 AM",
-    imageUrl: "https://example.com/skyline-towers.jpg",
+    imageUrl: "/11.jpg",
   },
   {
     hotelId: "12",
@@ -559,7 +357,7 @@ export const hotels: Hotel[] = [
     availableRooms: 7,
     checkInTime: "2:00 PM",
     checkOutTime: "11:00 AM",
-    imageUrl: "https://example.com/forest-edge-retreat.jpg",
+    imageUrl: "/12.jpg",
   },
   {
     hotelId: "13",
@@ -571,7 +369,7 @@ export const hotels: Hotel[] = [
     availableRooms: 20,
     checkInTime: "2:00 PM",
     checkOutTime: "12:00 PM",
-    imageUrl: "https://example.com/ocean-breeze-hotel.jpg",
+    imageUrl: "/13.jpg",
   },
   {
     hotelId: "14",
@@ -583,7 +381,7 @@ export const hotels: Hotel[] = [
     availableRooms: 5,
     checkInTime: "3:00 PM",
     checkOutTime: "11:00 AM",
-    imageUrl: "https://example.com/vibrant-villas.jpg",
+    imageUrl: "/14.jpg",
   },
   {
     hotelId: "15",
@@ -595,7 +393,7 @@ export const hotels: Hotel[] = [
     availableRooms: 10,
     checkInTime: "3:00 PM",
     checkOutTime: "12:00 PM",
-    imageUrl: "https://example.com/mountain-view-resort.jpg",
+    imageUrl: "/15.jpg",
   },
   {
     hotelId: "16",
@@ -607,7 +405,7 @@ export const hotels: Hotel[] = [
     availableRooms: 12,
     checkInTime: "2:00 PM",
     checkOutTime: "11:00 AM",
-    imageUrl: "https://example.com/seaside-paradise.jpg",
+    imageUrl: "/16.jpg",
   },
   {
     hotelId: "17",
@@ -619,7 +417,7 @@ export const hotels: Hotel[] = [
     availableRooms: 6,
     checkInTime: "3:00 PM",
     checkOutTime: "12:00 PM",
-    imageUrl: "https://example.com/royal-palace-inn.jpg",
+    imageUrl: "/17.jpg",
   },
   {
     hotelId: "18",
@@ -631,7 +429,7 @@ export const hotels: Hotel[] = [
     availableRooms: 10,
     checkInTime: "2:00 PM",
     checkOutTime: "12:00 PM",
-    imageUrl: "https://example.com/golden-sands-resort.jpg",
+    imageUrl: "/18.jpg",
   },
   {
     hotelId: "19",
@@ -643,7 +441,7 @@ export const hotels: Hotel[] = [
     availableRooms: 15,
     checkInTime: "3:00 PM",
     checkOutTime: "12:00 PM",
-    imageUrl: "https://example.com/peaceful-retreat.jpg",
+    imageUrl: "/13.jpg",
   },
   {
     hotelId: "20",
@@ -655,22 +453,20 @@ export const hotels: Hotel[] = [
     availableRooms: 4,
     checkInTime: "3:00 PM",
     checkOutTime: "11:00 AM",
-    imageUrl: "https://example.com/crystal-bay-resort.jpg",
+    imageUrl: "/20.jpg",
   },
 ];
-// data.ts
 
-// Interface for Activity
 export interface Activity {
-  activityId: string; // Unique ID for the activity
-  name: string;       // Name of the activity
-  location: string;   // Location of the activity
-  price: number;      // Price of the activity
-  rating: number;     // Rating (e.g., 1 to 5)
-  description: string; // Short description of the activity
+  activityId: string; 
+  name: string;       
+  location: string;   
+  price: number;     
+  rating: number;    
+  description: string; 
+  img:string;
 }
 
-// Sample Activities Data
 export const activities: Activity[] = [
   {
     activityId: "1",
@@ -678,6 +474,7 @@ export const activities: Activity[] = [
     location: "Maldives",
     price: 5000,
     rating: 4.8,
+    img: "./20.jpg",
     description: "Experience underwater life in the crystal clear waters of the Maldives.",
   },
   {
@@ -686,12 +483,14 @@ export const activities: Activity[] = [
     location: "Kenya",
     price: 8000,
     rating: 4.9,
+    img: "./19.jpg",
     description: "Explore the wild and witness exotic animals in their natural habitat.",
   },
   {
     activityId: "3",
     name: "Skydiving",
     location: "Dubai",
+    img: "./18.jpg",
     price: 10000,
     rating: 5.0,
     description: "Feel the adrenaline rush while skydiving over Dubai's iconic skyline.",
@@ -701,6 +500,7 @@ export const activities: Activity[] = [
     name: "Hot Air Balloon Ride",
     location: "Cappadocia, Turkey",
     price: 6000,
+    img: "./17.jpg",
     rating: 4.7,
     description: "Soar above the surreal landscapes of Cappadocia in a hot air balloon.",
   },
@@ -709,6 +509,7 @@ export const activities: Activity[] = [
     name: "Northern Lights Tour",
     location: "Reykjavik, Iceland",
     price: 7000,
+    img: "./16.jpg",
     rating: 4.9,
     description: "Witness the magical Northern Lights from the best viewpoints in Iceland.",
   },
@@ -717,6 +518,7 @@ export const activities: Activity[] = [
     name: "Wine Tasting",
     location: "Tuscany, Italy",
     price: 4000,
+    img: "./15.jpg",
     rating: 4.5,
     description: "Savor the finest wines in the scenic vineyards of Tuscany.",
   },
@@ -726,6 +528,7 @@ export const activities: Activity[] = [
     location: "Rishikesh, India",
     price: 3500,
     rating: 4.6,
+    img: "./14.jpg",
     description: "Experience the thrill of rafting on the rapids of the Ganges River.",
   },
   {
@@ -734,6 +537,7 @@ export const activities: Activity[] = [
     location: "Costa Rica",
     price: 4500,
     rating: 4.8,
+    img: "./13.jpg",
     description: "Fly through the lush rainforests of Costa Rica on a thrilling zip line adventure.",
   },
   {
@@ -741,6 +545,7 @@ export const activities: Activity[] = [
     name: "Desert Safari",
     location: "Rajasthan, India",
     price: 3000,
+    img: "./12.jpg",
     rating: 4.7,
     description: "Enjoy a camel ride and a traditional Rajasthani meal under the stars.",
   },
@@ -749,6 +554,7 @@ export const activities: Activity[] = [
     name: "Snorkeling",
     location: "Great Barrier Reef, Australia",
     price: 5500,
+    img: "./11.jpg",
     rating: 4.8,
     description: "Discover the vibrant marine life of the world's largest coral reef system.",
   },
@@ -757,6 +563,7 @@ export const activities: Activity[] = [
     name: "Helicopter Tour",
     location: "New York City, USA",
     price: 12000,
+    img: "./10.jpg",
     rating: 4.9,
     description: "Get a bird's-eye view of NYC's iconic landmarks from a helicopter.",
   },
@@ -765,6 +572,7 @@ export const activities: Activity[] = [
     name: "Cultural Tour",
     location: "Kyoto, Japan",
     price: 5000,
+    img: "./9.jpg",
     rating: 4.6,
     description: "Explore ancient temples, traditional tea houses, and stunning gardens.",
   },
@@ -773,6 +581,7 @@ export const activities: Activity[] = [
     name: "Mountain Trekking",
     location: "Himalayas, Nepal",
     price: 15000,
+    img: "./8.jpg",
     rating: 5.0,
     description: "Embark on an unforgettable trek through the majestic Himalayan range.",
   },
@@ -782,12 +591,14 @@ export const activities: Activity[] = [
     location: "Bangkok, Thailand",
     price: 2500,
     rating: 4.5,
+    img: "./7.jpg",
     description: "Learn to cook authentic Thai dishes with expert local chefs.",
   },
   {
     activityId: "15",
     name: "Surfing Lessons",
     location: "Bali, Indonesia",
+    img: "./3.jpg",
     price: 4000,
     rating: 4.7,
     description: "Catch some waves with professional surfing instructors in Bali.",

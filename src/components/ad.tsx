@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FlightBooking from "./flightbooking";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 interface AdvertProps {
   searchQuery: string;
@@ -13,7 +14,7 @@ const FirstComp: React.FC<AdvertProps> = ({ searchQuery }) => {
   };
 
   return (
-    <div className="relative h-auto mb-4 ">
+    <div className="relative h-auto mb-4 min-h-screen">
       <div
         className={`fixed top-0 left-0 h-full bg-gray-800 text-white px-4 py-8 z-50 transition-transform duration-300 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
@@ -73,32 +74,32 @@ const FirstComp: React.FC<AdvertProps> = ({ searchQuery }) => {
 
       <button
         onClick={toggleSidebar}
-        className="m-3 left-4 z-40 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none"
+        className="m-3 z-40 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none"
       >
-        {isSidebarOpen ? "Close Sidebar" : "Open Sidebar"}
+        {isSidebarOpen ? "Close Sidebar" : <GiHamburgerMenu />}
       </button>
 
       <div
-        className={`relative  transition-transform duration-300 ${
-          isSidebarOpen ? "opacity-50" : "opacity-100"
+        className={`relative transition-transform duration-300 ${
+          isSidebarOpen ? "ml-[250px]" : "ml-0"
         }`}
-        style={{ marginTop: isSidebarOpen ? "250px" : "0" }}
       >
-        <div
-          className="w-200  h-64 bg-cover bg-center sm:h-96 md:h-128 lg:h-160"
-          style={{
-            backgroundImage: "",
-          }}
-        >
+        <div className="w-full h-96 bg-cover px-8 mt-6 bg-center sm:h-96 md:h-128 lg:h-160">
           <img
             src="/pexels-samandgos-709552.jpg.crdownload"
             alt="Trip"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="mt-8 text-gray-600 text-lg px-8 sm:px-6 md:px-8">
+        <div className="mt-8 flex justify-between text-gray-600 text-lg px-8 sm:px-6 md:px-8">
           <p>21 March 2024 to 21 April 2024</p>
+          <img
+            src="/wb.jpg"
+            alt="Trip Image"
+            className="w-12 h-12 rounded-full object-cover"
+          />
         </div>
+
         <div className="mt-4 px-8 text-xl font-semibold sm:px-6 md:px-8">
           <p>Bahamas Family Trip</p>
           <p className="mt-2 text-gray-600">
@@ -106,44 +107,41 @@ const FirstComp: React.FC<AdvertProps> = ({ searchQuery }) => {
           </p>
         </div>
 
-        <div className="mt-8 flex w-full items-center justify-between px-3 sm:px-6 md:px-8">
-          {/* Three Boxes */}
-          <div className="grid min-w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 flex-grow">
-            {/* Activities Box */}
-            <div className="bg-white min-w-full p-6 rounded-lg shadow-lg text-center">
-              <h3 className="text-xl font-semibold">Activities</h3>
-              <p className="mt-4 text-gray-600">
-                Build, personalize and optimize your itineraries with our trip
-                planner.
-              </p>
-              <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-                Add Activities
-              </button>
-            </div>
+        <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 px-8 sm:px-6 md:px-8">
+          <div className="bg-blue-950 p-9 rounded-lg shadow-lg text-center">
+            <h3 className="text-xl text-zinc-50 font-semibold">Activities</h3>
+            <p className="mt-4 text-zinc-50">
+              Build, personalize and optimize your itineraries with our trip
+              planner.
+            </p>
+            <button className="mt-4 w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+              Add Activities
+            </button>
+          </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 className="text-xl font-semibold">Hotels</h3>
-              <p className="mt-4 text-gray-600">
-                Build, personalize and optimize your itineraries with our trip
-                planner.
-              </p>
-              <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-                Add Hotels
-              </button>
-            </div>
+          <div className="bg-blue-300 p-9 rounded-lg shadow-lg text-center">
+            <h3 className="text-xl font-semibold">Hotels</h3>
+            <p className="mt-4 text-gray-600">
+              Build, personalize and optimize your itineraries with our trip
+              planner.
+            </p>
+            <button className="mt-4 w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+              Add Hotels
+            </button>
+          </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
-              <h3 className="text-xl font-semibold">Flights</h3>
-              <p className="mt-4 text-gray-600">
-                Build, personalize and optimize your itineraries with our trip
-                planner.
-              </p>
-              <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-                Add Flights
-              </button>
-            </div>
+          <div className="bg-blue-500 p-9 rounded-lg shadow-lg text-center">
+            <h3 className="text-xl text-zinc-50 font-semibold">Flights</h3>
+            <p className="mt-4 text-zinc-50">
+              Build, personalize and optimize your itineraries with our trip
+              planner.
+            </p>
+            <button className="mt-4 w-full bg-white text-black px-4 py-2 rounded-lg hover:bg-blue-600">
+              Add Flights
+            </button>
           </div>
         </div>
+
         <div className="mt-7 bg-gray-100 sm:p-6 md:p-8">
           <FlightBooking searchQuery={searchQuery} />
         </div>

@@ -121,6 +121,9 @@ const FlightBooking: React.FC<FlightBookingProps> = ({ searchQuery }) => {
         onRemoveFlight={handleRemoveFlight}
         onRemoveHotel={handleRemoveHotel}
         onRemoveActivity={handleRemoveActivity}
+        handleAddFlightClick={handleAddFlightClick}
+        handleAddHotelClick={handleAddHotelClick}
+        handleAddActivityClick={handleAddActivityClick}
       />
     </div>
   );
