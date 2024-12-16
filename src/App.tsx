@@ -61,6 +61,12 @@
 
 // export default App;
 
+// {
+//     "rewrites": [
+//       { "source": "/(.*)", "destination": "/index.html" }
+//     ]
+//   }
+
 import React, { useState } from "react";
 import Navbar from "./components/nav";
 import Advert from "./components/ad";
