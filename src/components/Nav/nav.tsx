@@ -6,11 +6,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 flex justify-between items-center py-3">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img
-            src="/logo.png" // Replace with your logo path
-            alt="Logo"
-            className="w-8 h-8"
-          />
+          <img src="/logo.png" alt="Logo" className="w-8 h-8" />
           <span className="text-xl font-semibold">Travel Platform</span>
         </div>
 
