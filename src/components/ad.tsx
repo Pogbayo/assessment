@@ -87,7 +87,7 @@ const FirstComp: React.FC<AdvertProps> = ({ searchQuery }) => {
         <div
           className="w-200  h-64 bg-cover bg-center sm:h-96 md:h-128 lg:h-160"
           style={{
-            backgroundImage: "url('/your-image.jpg')",
+            backgroundImage: "",
           }}
         >
           <img
