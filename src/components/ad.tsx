@@ -55,7 +55,7 @@ const FirstComp: React.FC<AdvertProps> = () => {
       <div className="relative">
         <div className="w-full h-96 bg-cover px-8 mt-6 bg-center sm:h-96 md:h-128 lg:h-160">
           <img
-            src="/public/palm.jpg"
+            src="/palm.jpg"
             alt="Trip"
             className="w-full h-full object-cover"
           />
