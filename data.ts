@@ -261,7 +261,7 @@ export const hotels: Hotel[] = [
     availableRooms: 20,
     checkInTime: "2:00 PM",
     checkOutTime: "11:00 AM",
-    imageUrl: "h/4.jpg",
+    imageUrl: "/4.jpg",
   },
   {
     hotelId: "5",

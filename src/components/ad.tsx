@@ -1,96 +1,66 @@
 import React, { useState } from "react";
 import FlightBooking from "./flightbooking";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { Flight, Activity, Hotel } from "../../data";
 
 interface AdvertProps {
   searchQuery: string;
 }
 
-const FirstComp: React.FC<AdvertProps> = ({ searchQuery }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+const FirstComp: React.FC<AdvertProps> = () => {
+  const [selectedFlights, setSelectedFlights] = useState<Flight[]>([]);
+  const [selectedHotels, setSelectedHotels] = useState<Hotel[]>([]);
+  const [selectedActivities, setSelectedActivities] = useState<Activity[]>([]);
+  const [isFlightModalOpen, setIsFlightModalOpen] = useState(false);
+  const [isHotelModalOpen, setIsHotelModalOpen] = useState(false);
+  const [isActivityModalOpen, setIsActivityModalOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen((prevState) => !prevState);
+  const handleAddFlight = (flight: Flight) => {
+    setSelectedFlights((prev) => [...prev, flight]);
   };
+
+  const handleAddHotel = (hotel: Hotel) => {
+    setSelectedHotels((prev) => [...prev, hotel]);
+  };
+
+  const handleAddActivity = (activity: Activity) => {
+    setSelectedActivities((prev) => [...prev, activity]);
+  };
+
+  const handleRemoveFlight = (flightId: string) => {
+    setSelectedFlights((prev) =>
+      prev.filter((flight) => flight.flightId !== flightId)
+    );
+  };
+
+  const handleRemoveHotel = (hotelId: string) => {
+    setSelectedHotels((prev) =>
+      prev.filter((hotel) => hotel.hotelId !== hotelId)
+    );
+  };
+
+  const handleRemoveActivity = (activityId: string) => {
+    setSelectedActivities((prev) =>
+      prev.filter((activity) => activity.activityId !== activityId)
+    );
+  };
+
+  const handleAddFlightClick = () => setIsFlightModalOpen(true);
+
+  const handleAddHotelClick = () => setIsHotelModalOpen(true);
+
+  const handleAddActivityClick = () => setIsActivityModalOpen(true);
 
   return (
     <div className="relative h-auto mb-4 min-h-screen">
-      <div
-        className={`fixed top-0 left-0 h-full bg-gray-800 text-white px-4 py-8 z-50 transition-transform duration-300 ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-        style={{ width: "250px" }}
-      >
-        <button
-          onClick={toggleSidebar}
-          className="absolute top-4 right-4 text-gray-400 hover:text-white"
-        >
-          ✖
-        </button>
-        <h2 className="text-xl font-semibold mb-6">Travel Planner</h2>
-        <ul className="space-y-4">
-          <li>
-            <a href="#" className="hover:text-blue-500">
-              Activities
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-blue-500">
-              Hotels
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-blue-500">
-              Flights
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-blue-500">
-              Study
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-blue-500">
-              Visa
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-blue-500">
-              Immigration
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-blue-500">
-              Medical
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-blue-500">
-              Vacation Packages
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <button
-        onClick={toggleSidebar}
-        className="m-3 z-40 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none"
-      >
-        {isSidebarOpen ? "Close Sidebar" : <GiHamburgerMenu />}
-      </button>
-
-      <div
-        className={`relative transition-transform duration-300 ${
-          isSidebarOpen ? "ml-[250px]" : "ml-0"
-        }`}
-      >
+      <div className="relative">
         <div className="w-full h-96 bg-cover px-8 mt-6 bg-center sm:h-96 md:h-128 lg:h-160">
           <img
-            src="/pexels-samandgos-709552.jpg.crdownload"
+            src="/public/palm.jpg"
             alt="Trip"
             className="w-full h-full object-cover"
           />
         </div>
+
         <div className="mt-8 flex justify-between text-gray-600 text-lg px-8 sm:px-6 md:px-8">
           <p>21 March 2024 to 21 April 2024</p>
           <img
@@ -114,7 +84,10 @@ const FirstComp: React.FC<AdvertProps> = ({ searchQuery }) => {
               Build, personalize and optimize your itineraries with our trip
               planner.
             </p>
-            <button className="mt-4 w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+            <button
+              onClick={handleAddFlightClick}
+              className="mt-4 w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+            >
               Add Activities
             </button>
           </div>
@@ -125,7 +98,10 @@ const FirstComp: React.FC<AdvertProps> = ({ searchQuery }) => {
               Build, personalize and optimize your itineraries with our trip
               planner.
             </p>
-            <button className="mt-4 w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+            <button
+              onClick={handleAddHotelClick}
+              className="mt-4 w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+            >
               Add Hotels
             </button>
           </div>
@@ -136,14 +112,34 @@ const FirstComp: React.FC<AdvertProps> = ({ searchQuery }) => {
               Build, personalize and optimize your itineraries with our trip
               planner.
             </p>
-            <button className="mt-4 w-full bg-white text-black px-4 py-2 rounded-lg hover:bg-blue-600">
+            <button
+              onClick={handleAddActivityClick}
+              className="mt-4 w-full bg-white text-black px-4 py-2 rounded-lg hover:bg-blue-600"
+            >
               Add Flights
             </button>
           </div>
         </div>
 
         <div className="mt-7 bg-gray-100 sm:p-6 md:p-8">
-          <FlightBooking searchQuery={searchQuery} />
+          <FlightBooking
+            selectedFlights={selectedFlights}
+            selectedHotels={selectedHotels}
+            selectedActivities={selectedActivities}
+            handleAddFlight={handleAddFlight}
+            handleAddHotel={handleAddHotel}
+            handleAddActivity={handleAddActivity}
+            handleRemoveFlight={handleRemoveFlight}
+            handleRemoveHotel={handleRemoveHotel}
+            handleRemoveActivity={handleRemoveActivity}
+            isFlightModalOpen={isFlightModalOpen}
+            isHotelModalOpen={isHotelModalOpen}
+            isActivityModalOpen={isActivityModalOpen}
+            setIsFlightModalOpen={setIsFlightModalOpen}
+            setIsHotelModalOpen={setIsHotelModalOpen}
+            setIsActivityModalOpen={setIsActivityModalOpen}
+            searchQuery={""}
+          />
         </div>
       </div>
     </div>

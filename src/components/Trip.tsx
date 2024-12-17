@@ -1,5 +1,5 @@
 import React from "react";
-import { Activity, Flight, flights, Hotel } from "../../data";
+import { Activity, Flight, Hotel } from "../../data";
 import { LuPlaneLanding } from "react-icons/lu";
 import { FaRegFileAlt } from "react-icons/fa";
 import { RiHotelLine } from "react-icons/ri";
@@ -25,19 +25,10 @@ const Trip: React.FC<TripProps> = ({
   onRemoveFlight,
   onRemoveHotel,
   onRemoveActivity,
-  searchQuery,
   handleAddFlightClick,
   handleAddHotelClick,
   handleAddActivityClick,
 }) => {
-  const filteredFlights = flights.filter(
-    (flight) =>
-      flight.from.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      flight.to.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      flight.airline.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-  console.log(filteredFlights);
-
   return (
     <div className="r py-6 w-full border-2 container">
       <strong className=" flex items-center w-full">

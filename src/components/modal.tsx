@@ -22,7 +22,7 @@ const Modal: React.FC<ModalProps> = ({ flights, onAddFlight, onClose }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 overflow-auto">
-      <div className="bg-white p-8 rounded-lg w-11/12 sm:w-10/12 md:w-8/12 lg:w-7/12 xl:w-1/2 h-[80vh] overflow-y-auto shadow-xl border border-gray-300">
+      <div className="bg-white p-8 rounded-lg w-11/12 sm:w-10/12 md:w-8/12 lg:w-7/12 xl:w-1/2 h-[80vh] overflow-y-auto shadow-xl border custom-scrollbar border-gray-300">
         <div className="happy flex w-full mb-6 justify-between items-center bg-white py-4">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-center text-blue-600">
             Select a Flight
@@ -31,7 +31,7 @@ const Modal: React.FC<ModalProps> = ({ flights, onAddFlight, onClose }) => {
             onClick={onClose}
             className="py-2 sm:py-3 px-4 sm:px-6 bg-red-600 text-white rounded-lg hover:bg-gray-700 transition-colors w-30 sm:w-auto"
           >
-            Close
+            <strong>X</strong>
           </button>
         </div>
         <div className="space-y-6">

@@ -67,22 +67,15 @@
 //     ]
 //   }
 
-import React, { useState } from "react";
 import Navbar from "./components/nav";
 import Advert from "./components/ad";
 import "./index.css";
 
 const App: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState<string>("");
-
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-  };
-
   return (
     <div className="bg-gray-100 mb-4 min-h-screen">
-      <Navbar onSearch={handleSearch} />
-      <Advert searchQuery={searchQuery} />
+      <Navbar />
+      <Advert searchQuery={""} />
     </div>
   );
 };

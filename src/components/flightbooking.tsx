@@ -14,8 +14,23 @@ import Modal from "./modal";
 
 interface FlightBookingProps {
   searchQuery: string;
+  selectedFlights: Flight[];
+  selectedHotels: Hotel[];
+  selectedActivities: Activity[];
+  handleAddFlight: (flight: Flight) => void;
+  handleAddHotel: (hotel: Hotel) => void;
+  handleAddActivity: (activity: Activity) => void;
+  handleRemoveFlight: (flightId: string) => void;
+  handleRemoveHotel: (hotelId: string) => void;
+  handleRemoveActivity: (activityId: string) => void;
+  isFlightModalOpen: boolean;
+  isHotelModalOpen: boolean;
+  isActivityModalOpen: boolean;
+  setIsFlightModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsHotelModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsActivityModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
-const FlightBooking: React.FC<FlightBookingProps> = ({ searchQuery }) => {
+const FlightBooking: React.FC<FlightBookingProps> = () => {
   const [selectedFlights, setSelectedFlights] = useState<Flight[]>([]);
   const [selectedHotels, setSelectedHotels] = useState<Hotel[]>([]);
   const [selectedActivities, setSelectedActivities] = useState<Activity[]>([]);
@@ -114,7 +129,6 @@ const FlightBooking: React.FC<FlightBookingProps> = ({ searchQuery }) => {
       )}
 
       <Trip
-        searchQuery={searchQuery}
         selectedFlights={selectedFlights}
         selectedHotels={selectedHotels}
         selectedActivities={selectedActivities}
@@ -124,6 +138,7 @@ const FlightBooking: React.FC<FlightBookingProps> = ({ searchQuery }) => {
         handleAddFlightClick={handleAddFlightClick}
         handleAddHotelClick={handleAddHotelClick}
         handleAddActivityClick={handleAddActivityClick}
+        searchQuery={""}
       />
     </div>
   );
