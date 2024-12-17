@@ -88,8 +88,13 @@ To deploy the application to a live server:
 
 npm run build
 
+
 **Preview the production build locally:**
 
 npm run preview
 
 Deploy the dist folder to your preferred hosting service (e.g., Vercel, Netlify, or AWS).
+
+**LINK TO LIVE CODE**
+
+https://assessment-pt6f.vercel.app/
